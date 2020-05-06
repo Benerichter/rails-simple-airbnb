@@ -1,0 +1,18 @@
+<h1>Flats</h1>
+<div id="css_grid">
+  <% @flats.each do |e| %>
+    <div class="card" >
+      <img class="card-img-top" src= <%= e.picture_url %> alt="Card image cap" style="height: 300px">
+      <%=  %>
+      <div class="card-body">
+        <h5 class="card-title" id="card-header"><%= e.name %></h5>
+        <p class="card-text"><%= e.address %></p>
+        <div class="d-flex justify-content-between">
+          <p><i class="fas fa-users"></i><%= e.number_of_guests %></p>
+          <p><i class="fas fa-euro-sign"></i><%= e.price_per_night %></p>
+        </div>
+        <%= link_to "Read more", flat_path(e.id), class: "btn btn-primary"%>
+      </div>
+    </div>
+  <% end %>
+</div>
